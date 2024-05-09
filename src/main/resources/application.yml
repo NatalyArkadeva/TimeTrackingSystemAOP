@@ -1,0 +1,19 @@
+server.port: 8080
+
+spring:
+  liquibase:
+    enabled: true
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://localhost:5555/track_time
+    username: admin
+    password: admin
+    driverClassName: org.postgresql.Driver
+
+logging:
+  file.path: ./logs

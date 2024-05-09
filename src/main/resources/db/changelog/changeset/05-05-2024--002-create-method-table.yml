@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 05-05-2024--002-create-method-table
+      author: Nataly
+      changes:
+        - createTable:
+            tableName: method
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: method_name
+                  type: varchar
+              - column:
+                  name: class_name
+                  type: varchar

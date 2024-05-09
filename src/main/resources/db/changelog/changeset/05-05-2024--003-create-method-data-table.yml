@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 05-05-2024--003-create-method-data-table
+      author: Nataly
+      changes:
+        - createTable:
+            tableName: method_data
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: execution_time
+                  type: bigint
+              - column:
+                  name: type
+                  type: varchar(50)
+              - column:
+                  name: method_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_method_data_method
+                    referencedTableName: method
+                    referencedColumnNames: id
+                    nullable: false

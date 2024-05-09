@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 05-05-2024--001-create-user-table
+      author: Nataly
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar
+              - column:
+                  name: last_name
+                  type: varchar
